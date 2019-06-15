@@ -11,6 +11,7 @@ public class Jet extends Unit {
     }
 
 
+
     public void superJetSkill(Country offensiveCountry, Country defensiveCountry, Field field){
         bonus=bonusGenerator.nextInt(100);
         if(offensiveCountry.army.jets.size()<=defensiveCountry.army.jets.size()) {

@@ -3,6 +3,9 @@ package simulation;
 import java.io.*;
 import java.util.StringTokenizer;
 
+/**
+ * class responsible for loading data from the user
+ */
 public class Data {
     private static int numberOfCountries;
     private static int mapSize;
@@ -13,6 +16,7 @@ public class Data {
         this.mapSize = mapSize;
         this.numberOfIterations = numberOfIterations;
     }
+
 
     public static void readInputData(BufferedReader input) throws IOException {
         numberOfCountries = lineReader(input, numberOfCountries);

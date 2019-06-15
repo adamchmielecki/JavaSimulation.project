@@ -34,7 +34,6 @@ public class Data {
     public static int getNumberOfCountries() {
         return numberOfCountries;
     }
-
     public static int getMapSize() {
         return mapSize;
     }

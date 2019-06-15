@@ -14,14 +14,14 @@ public class Map {
         generator = new Random();
 
         for(int i = 0; i<data.getNumberOfCountries(); i++){
-            countries.add(new Country(i,new Army()));
+            countries.add(new Country(i));//,new Army()));
         }
     }
 
     Data data;
     Field [][] field;
     ArrayList<Country> countries;
-    Army army;
+    //Army army;
     Random generator;
 
 

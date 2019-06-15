@@ -1,8 +1,6 @@
 package simulation;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Simulation {
 
@@ -18,8 +16,6 @@ public class Simulation {
             System.out.println(e.getMessage());
         }
 
-
-
         Data data = new Data(Data.getNumberOfCountries(), Data.getMapSize(), Data.getNumberOfIterations());
 
         Map map = new Map(data);
@@ -28,9 +24,16 @@ public class Simulation {
         map.generateStartingPosition();
         map.printMap();
         for(int i=0; i<data.getNumberOfCountries(); i++){
-            map.countries.get(0).army.generateArmy();
+            map.countries.get(i).army.generateArmy();
         }
 
+        /*System.out.println(map.countries.get(0).army.units.get(0).getCount());
+        System.out.println(map.countries.get(0).army.units.get(1).getCount());
+        System.out.println(map.countries.get(0).army.units.get(2).getCount());
+        System.out.println();
+        System.out.println(map.countries.get(1).army.units.get(0).getCount());
+        System.out.println(map.countries.get(1).army.units.get(1).getCount());
+        System.out.println(map.countries.get(1).army.units.get(2).getCount());*/
 
 
         for(int i=0; i<data.getNumberOfIterations(); i++){
@@ -43,7 +46,19 @@ public class Simulation {
             }
             System.out.println("Iteracja: "+i);
         }
+        /*System.out.println();
+        System.out.println(map.countries.get(0).army.units.get(0).getCount());
+        System.out.println(map.countries.get(0).army.units.get(1).getCount());
+        System.out.println(map.countries.get(0).army.units.get(2).getCount());
         System.out.println();
+        System.out.println(map.countries.get(1).army.units.get(0).getCount());
+        System.out.println(map.countries.get(1).army.units.get(1).getCount());
+        System.out.println(map.countries.get(1).army.units.get(2).getCount());
+        System.out.println();
+        System.out.println(map.countries.get(1).army.units.size());
+        System.out.println(map.countries.get(0).getTotalGold());
+        System.out.println(map.countries.get(0).getTotalPopulation());
+        System.out.println();*/
         System.out.println("Map after the simulation:");
         map.printMap();
     }

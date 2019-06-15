@@ -6,7 +6,7 @@ import java.util.Stack;
 public class Country {
 
     private int countryID;
-    Map map;
+    //Map map;
 
     public int getTotalPopulation() {
         return totalPopulation;
@@ -31,18 +31,16 @@ public class Country {
     private Stack<Field> territory;
     public Army army;
 
-    public Country(int countryID, Army army) {
+    public Country(int countryID){//, Army army) {
         army=new Army();
         territory = new Stack<>();
         this.countryID = countryID;
-        this.army = army;
-
+        //this.army = army;
 
         totalGold=0;
         totalPopulation=0;
-
-
     }
+
 
     public int summingCountryGold(){
         totalGold=0;
@@ -63,15 +61,18 @@ public class Country {
 
 
     int attack() {
-        int powerOfAttack;
-
-        powerOfAttack = army.soldiers.size()*(new Soldier().strenghtOfAttack)+army.tanks.size()*(new Tank().strenghtOfAttack)+army.jets.size()*(new Jet().strenghtOfAttack);
+        int powerOfAttack=0;
+        for (Unit unit: army.units) {
+            powerOfAttack+=unit.getCount()*unit.strenghtOfAttack;
+        }
         return powerOfAttack;
     }
 
     int defend() {
-        int powerOfDefence;
-        powerOfDefence = army.soldiers.size()*(new Soldier().strenghtOfDefence)+army.tanks.size()*(new Tank().strenghtOfDefence)+army.jets.size()*(new Jet().strenghtOfDefence);
+        int powerOfDefence=0;
+        for (Unit unit: army.units) {
+            powerOfDefence+=unit.getCount()*unit.strenghtOfDefence;
+        }
         return powerOfDefence;
     }
 

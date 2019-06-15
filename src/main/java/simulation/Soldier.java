@@ -12,14 +12,14 @@ public class Soldier extends Unit {
         cost = 10;
     }
 
-   /* public void createNewSoldier(Country country){
-        setCount(getCount() + 1);
-        country.setTotalGold(country.getTotalGold() - cost);
-        country.setTotalPopulation(country.getTotalPopulation() - staff);
-    }*/
-    public void superSoldierSkill(Country country1, Country country2, Field field){
+    /* public void createNewSoldier(Country country){
+         setCount(getCount() + 1);
+         country.setTotalGold(country.getTotalGold() - cost);
+         country.setTotalPopulation(country.getTotalPopulation() - staff);
+     }*/
+    public void superSoldierSkill(Country offensiveCountry, Country defensiveCountry, Field field){
         bonus=bonusGenerator.nextInt(100);
-        if(country1.army.soldier.getCount()>=country2.army.soldier.getCount()){
+        if(offensiveCountry.army.soldiers.size()>=defensiveCountry.army.soldiers.size()){
             if(bonus>=85){
                 field.population.setAmount(field.population.getAmount()*2);
             }

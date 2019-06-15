@@ -32,7 +32,7 @@ public class Country {
     public Army army;
 
     public Country(int countryID, Army army) {
-        army=new Army(10,10,10);
+        army=new Army();
         territory = new Stack<>();
         this.countryID = countryID;
         this.army = army;
@@ -55,7 +55,7 @@ public class Country {
     public int  summingCountryPopuation(){
         totalPopulation=0;
         for(int i=0; i<territory.size(); i++){
-            totalPopulation+=territory.get(i).gold.getAmount();
+            totalPopulation+=territory.get(i).population.getAmount();
         }
         return totalPopulation;
     }
@@ -64,13 +64,14 @@ public class Country {
 
     int attack() {
         int powerOfAttack;
-        powerOfAttack = army.soldier.getCount()*army.soldier.strenghtOfAttack+army.tank.getCount()*army.tank.strenghtOfAttack+army.jet.getCount()*army.jet.strenghtOfAttack;
+
+        powerOfAttack = army.soldiers.size()*(new Soldier().strenghtOfAttack)+army.tanks.size()*(new Tank().strenghtOfAttack)+army.jets.size()*(new Jet().strenghtOfAttack);
         return powerOfAttack;
     }
 
     int defend() {
         int powerOfDefence;
-        powerOfDefence = army.soldier.getCount()*army.soldier.strenghtOfDefence+army.tank.getCount()*army.tank.strenghtOfDefence+army.jet.getCount()*army.jet.strenghtOfDefence;
+        powerOfDefence = army.soldiers.size()*(new Soldier().strenghtOfDefence)+army.tanks.size()*(new Tank().strenghtOfDefence)+army.jets.size()*(new Jet().strenghtOfDefence);
         return powerOfDefence;
     }
 
@@ -78,16 +79,8 @@ public class Country {
         return countryID;
     }
 
-    public void setCountryID(int countryID) {
-        this.countryID = countryID;
-    }
-
-
     public Stack<Field> getTerritory() {
         return territory;
     }
 
-    public void setTerritory(Stack<Field> territory) {
-        this.territory = territory;
-    }
 }

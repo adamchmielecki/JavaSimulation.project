@@ -17,17 +17,8 @@ public abstract class Unit implements IUnit {
     }
 
     public void createNewUnit(Country country){
-        setCount(getCount()+1);
         country.setTotalGold(country.getTotalGold() - cost);
         country.setTotalPopulation(country.getTotalPopulation() - staff);
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
     }
 
 }

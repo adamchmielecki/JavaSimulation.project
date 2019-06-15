@@ -1,0 +1,3 @@
+Number of countries: 10
+Map mapSize: 8
+Number of iterations: 100

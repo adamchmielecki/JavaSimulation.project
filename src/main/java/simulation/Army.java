@@ -4,17 +4,24 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *class responsible for operations on the army of each country
+ * This class is responsible for operations on the army of each country
  */
 public class Army  {
 
+    /**
+     * Constructor to create an Object of an instance
+     */
     public Army() {
         generator = new Random();
         units = new ArrayList<>();
+        mostExpensiveUnit=0;
+        mostValuableUnit=0;
     }
 
     Random generator;
     ArrayList<Unit> units;
+    private int mostExpensiveUnit;
+    private int mostValuableUnit;
 
 /*    public void superMethods(Country offensiveCountry, Country defensiveCountry, Field field){
     /**
@@ -52,12 +59,11 @@ public class Army  {
         for (Unit unit: units) unit.setCount(unit.getCount()/2);
     }
 
-    public int mostExpensiveUnit=0;
-    public int mostValuableUnit=0;
+
 
     /**
      * This method creates new units for each country in each iteration
-     * @param country the country where the operation is performed
+     * @param country the country for which new units are created
      */
     public void updateArmy(Country country) {
         for (Unit unit:units) {

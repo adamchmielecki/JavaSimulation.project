@@ -2,8 +2,16 @@ package simulation;
 
 import java.util.Random;
 
+/**
+ * This class is responsible for storing information about parameters and method of soldier
+ */
 public class Soldier extends Unit {
 
+    /**
+     * Constructor to create an Object of an instance
+     * Constructor defines parameters for soldier unit
+     * @param numberOfUnits number of soldiers
+     */
     public Soldier(int numberOfUnits){
         super(numberOfUnits);
         strenghtOfAttack = 5;

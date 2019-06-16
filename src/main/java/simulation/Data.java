@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 /**
- * class responsible for loading data from the user
+ * This class is responsible for loading data from the user
  */
 public class Data {
     private static int numberOfCountries;
@@ -18,12 +18,24 @@ public class Data {
     }
 
 
+    /**
+     *
+     * @param input
+     * @throws IOException
+     */
     public static void readInputData(BufferedReader input) throws IOException {
         numberOfCountries = lineReader(input, numberOfCountries);
         mapSize = lineReader(input, mapSize);
         numberOfIterations = lineReader(input, numberOfIterations);
     }
 
+    /**
+     *
+     * @param input
+     * @param value
+     * @return
+     * @throws IOException
+     */
     private static int lineReader(BufferedReader input, int value) throws IOException {
         String line = input.readLine();
         StringTokenizer token = new StringTokenizer(line, ":");
@@ -34,13 +46,26 @@ public class Data {
         return value;
     }
 
-
+    /**
+     * Allows to access the variable of number of countries
+     * @return returns number of countries take part in simulation
+     */
     public static int getNumberOfCountries() {
         return numberOfCountries;
     }
+
+    /**
+     * Allows to access the variable of size of map
+     * @return returns the size of the map
+     */
     public static int getMapSize() {
         return mapSize;
     }
+
+    /**
+     * Allows to access the variable of number of iterations
+     * @return returns number of round in simulation
+     */
     public static int getNumberOfIterations() {
         return numberOfIterations;
     }

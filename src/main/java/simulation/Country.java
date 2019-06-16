@@ -2,7 +2,7 @@ package simulation;
 import java.util.Stack;
 
 /**
- * class responsible for operations on country
+ * This class is responsible for operations on country
  */
 public class Country {
 
@@ -12,11 +12,14 @@ public class Country {
     private Stack<Field> territory;
     Army army;
 
+    /**
+     * Constructor to create an Object of an instance
+     * @param countryID  unique id of country
+     */
     public Country(int countryID){//, Army army) {
         army=new Army();
         territory = new Stack<>();
         this.countryID = countryID;
-        //this.army = army;
         totalGold=0;
         totalPopulation=0;
     }
@@ -46,7 +49,10 @@ public class Country {
     }
 
 
-
+    /**
+     * This method determines the strength of the country attack
+     * @return strength of the country attack
+     */
     int attack() {
         int powerOfAttack=0;
         for (Unit unit: army.units) {
@@ -67,38 +73,38 @@ public class Country {
     }
 
     /**
-     *
+     * Allows us to access the variable of the country ID
      * @return return the country id
      */
     public int getCountryID() { return countryID; }
 
     /**
-     *
+     * Allows us to access the stack of the country territory
      * @return return a territory of country
      */
     public Stack<Field> getTerritory() { return territory; }
 
     /**
-     *
+     * Allows us to access the variable of the total number of population of the country
      * @return return total population of country
      */
     public int getTotalPopulation() { return totalPopulation; }
 
     /**
-     *
-     * @param totalPopulation allows set the number of population in the country
+     * Allows set the number of total population in the country
+     * @param totalPopulation total population country
      */
     public void setTotalPopulation(int totalPopulation) { this.totalPopulation = totalPopulation; }
 
     /**
-     *
+     * Allows us to access the variable of total number of gold of the country
      * @return total gold of country
      */
     public int getTotalGold() { return totalGold; }
 
     /**
-     *
-     * @param totalGold allows set the number of population in the country
+     * Allows set the number of total gold in the country
+     * @param totalGold total gold country
      */
     public void setTotalGold(int totalGold) { this.totalGold = totalGold; }
 

@@ -3,7 +3,7 @@ package simulation;
 import java.util.Random;
 
 /**
- * class responsible for set value of gold and population
+ * This class is responsible for set value of gold and population on field, and sets the fields owner
  */
 public class Field {
 
@@ -15,8 +15,9 @@ public class Field {
     Random generator;
 
 
-
-
+    /**
+     * Constructor to create an Object of an instance and set value of gold and population on field
+     */
     public Field() {
         generator = new Random();
         gold = new Gold(generator.nextInt(200));
@@ -27,32 +28,32 @@ public class Field {
     }
 
     /**
-     *
-     * @return returns field id
+     * Allows access the variable of the field ID
+     * @return returns the field ID
      */
     public int getFieldID() {
         return fieldID;
     }
 
     /**
-     *
-     * @param fieldID set field id
+     * Allows set the field ID
+     * @param fieldID unique ID of each field
      */
     public void setFieldID(int fieldID) {
         this.fieldID = fieldID;
     }
 
     /**
-     *
-     * @return returns the field owner's id
+     * Allows access the variable of the owner ID od field
+     * @return returns the field owner's ID
      */
     public int getOwnerID() {
         return ownerID;
     }
 
     /**
-     *
-     * @param ownerID ownerID
+     * Allows set the field owner's ID
+     * @param ownerID ID of field owner
      */
     public void setOwnerID(int ownerID) {
         this.ownerID = ownerID;

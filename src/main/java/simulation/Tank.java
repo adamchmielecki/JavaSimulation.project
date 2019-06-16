@@ -2,8 +2,16 @@ package simulation;
 
 import java.util.Random;
 
+/**
+ * class responsible for storing information about parameters and method of tank
+ */
 public class Tank extends Unit {
 
+    /**
+     * Constructor to create an Object of an instance
+     * Constructor defines parameters for tank unit
+     * @param numberOfUnits number of tanks
+     */
     public Tank(int numberOfUnits){
         super(numberOfUnits);
         strenghtOfAttack = 10;

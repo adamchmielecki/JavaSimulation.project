@@ -3,10 +3,16 @@ package simulation;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * This class  is responsible for operations on simulations word(generate resources, generate starting positions of countries, take new fields)
+ */
 public class Map {
-    //private ArrayList<Country> countries ;
+
     private int ID=0;
 
+    /**
+     * Constructor to create an Object of an instance
+     */
     public Map(Data data) {
         this.data = data;
         field = new Field[data.getMapSize()][data.getMapSize()];
@@ -25,6 +31,9 @@ public class Map {
     Random generator;
 
 
+    /**
+     * This method sets unique ID for each of field
+     */
     public void settingID(){
         for(int i = 0; i<data.getMapSize(); i++){
             for(int j = 0; j<data.getMapSize(); j++)
@@ -36,6 +45,11 @@ public class Map {
         }
     }
 
+    /**
+     * This method sets amount of gold on each field
+     * @param max the maximum amount of gold in the field
+     * @param min the minimum amount of gold in the field
+     */
     private void generateGold(int max, int min){
         for(int i = 0; i<data.getMapSize(); i++) {
             for (int j = 0; j < data.getMapSize(); j++) {
@@ -43,33 +57,27 @@ public class Map {
 
             }
         }
-       /* System.out.println("goooold");
-        for(int i = 0; i<data.getMapSize(); i++){
-            for(int j = 0; j<data.getMapSize(); j++) {
-               System.out.print(field[i][j].gold.getAmount()+" ");
-            }System.out.println();
-        }*/
-
     }
 
 
-
+    /**
+     * This method sets amount of population on each field
+     * @param max the maximum amount of population in the field
+     * @param min the minimum amount of population in the field
+     */
     private void generatePopulation(int max, int min){
         for(int i = 0; i<data.getMapSize(); i++){
             for(int j = 0; j<data.getMapSize(); j++) {
                 field[i][j].population.setAmount(generator.nextInt(max)+min);
             }
         }
-
-       /* System.out.println("pooopulation");
-        for(int i = 0; i<data.getMapSize(); i++){
-            for(int j = 0; j<data.getMapSize(); j++) {
-                System.out.print(field[i][j].population.getAmount()+" ");
-            }System.out.println();
-        }*/
-
-
     }
+
+    /**
+     * This method calls generateGold and generatePopulation method
+     * @param max the maximum amount of gold and population in the field
+     * @param min the maximum amount of gold and population in the field
+     */
     public void generateResources(int max, int min){
         generateGold(max, min);
         generatePopulation(max, min);
@@ -84,6 +92,10 @@ public class Map {
             }System.out.println();
         }
     }
+
+    /**
+     * This method generates starting position for each country at the beginning of the simulation
+     */
     public void generateStartingPosition(){
         for(int i = 0; i<data.getNumberOfCountries(); i++){
             int xCor=0;
@@ -100,6 +112,9 @@ public class Map {
         }
     }
 
+    /**
+     * This method allows each of countries take a new filed in each iterations
+     */
     public void takeNewField(){
         int [][] ownerTable = new int[data.getMapSize()][data.getMapSize()];
 

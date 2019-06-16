@@ -1,7 +1,16 @@
 package simulation;
 
+/**
+ * class responsible for storing information about parameters and method of jet
+ */
 public class Jet extends Unit {
 
+
+    /**
+     * Constructor to create an Object of an instance
+     * Constructor defines parameters for jet unit
+     * @param numberOfUnits number of jets
+     */
     public Jet(int numberOfUnits){
         super(numberOfUnits);
         strenghtOfAttack = 15;

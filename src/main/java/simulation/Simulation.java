@@ -2,10 +2,16 @@ package simulation;
 
 import java.io.*;
 
+/**
+ * This class is responsible for loading data from the file and run the simulation
+ */
 public class Simulation {
 
 
-    public void startSimulation(){
+    /**
+     * This method is responsible for loading data from the file
+     */
+    public void loadData(){
         try{
             BufferedReader input = new BufferedReader(new FileReader("InputData.txt"));
             Data.readInputData(input);
@@ -15,8 +21,16 @@ public class Simulation {
                 IOException e){
             System.out.println(e.getMessage());
         }
-
+    }
+    /**
+     * This method is responsible for start simulation
+     */
+    public void startSimulation(){
         Data data = new Data(Data.getNumberOfCountries(), Data.getMapSize(), Data.getNumberOfIterations());
+
+        System.out.println(Data.getNumberOfCountries());
+        System.out.println(Data.getMapSize());
+        System.out.println(Data.getNumberOfIterations());
 
         Map map = new Map(data);
         map.settingID();

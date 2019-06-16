@@ -71,10 +71,20 @@ public class Simulation {
         System.out.println();
         System.out.println(map.countries.get(1).army.units.size());
         System.out.println(map.countries.get(0).getTotalGold());
-        System.out.println(map.countries.get(0).getTotalPopulation());
-        System.out.println();*/
+        System.out.println(map.countries.get(0).getTotalPopulation());*/
+        System.out.println();
         System.out.println("Map after the simulation:");
         map.printMap();
+
+        try{
+            PrintWriter output = new PrintWriter(new FileWriter("SimulationResults.txt"));
+            Data.printSimulationResults(output, map.countries);
+            output.close();
+        }
+        catch (
+                IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 
 

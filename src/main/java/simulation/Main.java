@@ -8,7 +8,6 @@ public class Main {
         Simulation simulation = new Simulation();
         simulation.loadData();
         simulation.startSimulation();
-
     }
 
 }

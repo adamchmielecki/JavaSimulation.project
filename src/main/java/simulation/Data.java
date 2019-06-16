@@ -1,6 +1,7 @@
 package simulation;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
@@ -44,6 +45,18 @@ public class Data {
         text = text.trim();
         value = Integer.parseInt(text);
         return value;
+    }
+
+    public static void printSimulationResults(PrintWriter output, ArrayList<Country> countries) throws IOException {
+        output.println("Countries after simulation:");
+        for (int i=0; i<countries.size(); i++){
+            if(countries.get(i).getTerritory().size()==0){
+                output.println("ID: " + countries.get(i).getCountryID() + ". Doesn't exist.");
+            }
+            else{
+                output.println("ID: " + countries.get(i).getCountryID() +". Fields - " + (countries.get(i).getTerritory().size()) + "; Power of attack - " + countries.get(i).attack() + "; Power of defence - " + countries.get(i).defend());
+            }
+        }
     }
 
     /**

@@ -10,4 +10,6 @@ public interface IUnit {
      * @param country the country for which the units are created
      */
     void createNewUnit(Country country);
+    int getCount();
+    void setCount(int count);
 }

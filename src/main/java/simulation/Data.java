@@ -47,6 +47,13 @@ public class Data {
         return value;
     }
 
+
+    /**
+     * This method prints the country statistics after simulation
+     * @param output file where the data will get saved
+     * @param map map for which the simulation is performed
+     * @throws IOException Constructs an IOException with null as its error detail message
+     */
     public static void printSimulationResults(PrintWriter output, Map map) throws IOException {
         output.println("Countries after simulation:");
         for (int i=0; i<map.countries.size(); i++){

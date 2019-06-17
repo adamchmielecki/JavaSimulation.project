@@ -17,7 +17,7 @@ public class Country {
      * Constructor to create an Object of an instance
      * @param countryID  unique id of country
      */
-    public Country(int countryID){//, Army army) {
+    public Country(int countryID){
         army=new Army();
         territory = new Stack<>();
         this.countryID = countryID;
@@ -31,11 +31,7 @@ public class Country {
      */
     public int summingCountryGold(Data data, Map map){
         totalGold=0;
-       /* System.out.println("ID: "+this.countryID +" ,size:"+this.territory.size());
-        for(int i=0;i<this.territory.size();i++)
-        {
-            System.out.println(i+"->"+territory.get(i).getFieldID());
-        }*/
+
         for(int j=0; j<data.getMapSize(); j++){
             for(int k=0; k<data.getMapSize(); k++){
                 if(map.field[j][k].getOwnerID()==this.countryID){
@@ -44,9 +40,6 @@ public class Country {
             }
         }
 
-      /*  for(int i=0; i<territory.size(); i++){
-            totalGold+=territory.get(i).gold.getAmount();
-        }*/
         return totalGold;
     }
 
@@ -57,11 +50,6 @@ public class Country {
     public int  summingCountryPopuation(Data data, Map map){
         totalPopulation=0;
 
-       /* System.out.println("ID: "+this.countryID +" ,size:"+this.territory.size());
-        for(int i=0;i<this.territory.size();i++)
-        {
-            System.out.println(i+"->"+territory.get(i).getFieldID());
-        }*/
         for(int j=0; j<data.getMapSize(); j++){
             for(int k=0; k<data.getMapSize(); k++){
                 if(map.field[j][k].getOwnerID()==this.countryID){
@@ -70,9 +58,6 @@ public class Country {
             }
         }
 
-      /*  for(int i=0; i<territory.size(); i++){
-            totalGold+=territory.get(i).gold.getAmount();
-        }*/
 
         return totalPopulation;
     }

@@ -87,7 +87,7 @@ public class Map {
         generatePopulation(max, min);
 
     }
-    public void printMap(){
+   /* public void printMap(){
         for(int i = 0; i<data.getMapSize(); i++){
             for(int j = 0; j<data.getMapSize(); j++) {
                 //field[i][j].setFieldID(ID);
@@ -95,8 +95,13 @@ public class Map {
                 System.out.print(field[i][j].getOwnerID()+" ");
             }System.out.println();
         }
-    }
+    }*/
 
+    /**
+     *  This method calculates the size of the territory
+     * @param country the countries on which the operation is performed
+     * @return size of territory
+     */
     public int countSize(Country country){
         int territorySize=0;
         for(int j=0; j<data.getMapSize(); j++){
@@ -132,15 +137,7 @@ public class Map {
      * This method allows each of countries take a new filed in each iterations
      */
     public void takeNewField(int i){
-        //int [][] ownerTable = new int[data.getMapSize()][data.getMapSize()];
 
-  /*for(int j=0; j<data.getMapSize(); j++) {
-            for (int k = 0; k < data.getMapSize(); k++) {
-                ownerTable[j][k]=field[j][k].getOwnerID();
-            }
-        }*/
-
-       /* for(int i = 0; i<data.getNumberOfCountries(); i++){*/
             int x;
 
             if(!countries.get(i).getTerritory().isEmpty()){
@@ -152,13 +149,10 @@ public class Map {
 
                                     x = generator.nextInt(4);
 
-                                    // System.out.println("ID " + i + "X" + x);
                                     if (x == 0&&field[j - 1][k].getOwnerID()!=i) {
                                         if (field[j - 1][k].getOwnerID()!=-1) {
                                             if(countries.get(i).attack()>countries.get(field[j - 1][k].getOwnerID()).defend()){
-                                              // countries.get(field[j-1][k].getOwnerID()).getTerritory().pop();
                                                 countries.get(field[j - 1][k].getOwnerID()).getTerritory().remove(field[j - 1][k]);//////////////////
-                                              //  countries.get(field[j - 1][k].getOwnerID()).getTerritory().trimToSize();//////////////////
                                                 countries.get(i).getTerritory().add(field[j- 1][k]);
                                                 countries.get(field[j - 1][k].getOwnerID()).army.reduceArmy();
 
@@ -180,9 +174,7 @@ public class Map {
                                     if (x == 1&&field[j + 1][k].getOwnerID()!=i) {
                                         if (field[j + 1][k].getOwnerID()!=-1) {
                                             if(countries.get(i).attack()>countries.get(field[j + 1][k].getOwnerID()).defend()){
-                                               // countries.get(field[j + 1][k].getOwnerID()).getTerritory().pop();
                                                 countries.get(field[j + 1][k].getOwnerID()).getTerritory().remove(field[j + 1][k]);//////////////////
-                                              //  countries.get(field[j + 1][k].getOwnerID()).getTerritory().trimToSize();//////////////////
                                                 countries.get(i).getTerritory().add(field[j + 1][k]);
                                                 countries.get(field[j + 1][k].getOwnerID()).army.reduceArmy();
 
@@ -199,9 +191,7 @@ public class Map {
                                     if (x == 2&&field[j][k-1].getOwnerID()!=i) {
                                         if (field[j][k - 1].getOwnerID()!=-1) {
                                             if(countries.get(i).attack()>countries.get(field[j][k - 1].getOwnerID()).defend()){
-                                               // countries.get(field[j][k - 1].getOwnerID()).getTerritory().pop();
                                                 countries.get(field[j][k-1].getOwnerID()).getTerritory().remove(field[j][k-1]);//////////////////
-                                               // countries.get(field[j][k-1].getOwnerID()).getTerritory().trimToSize();//////////////////
                                                 countries.get(i).getTerritory().add(field[j][k - 1]);
                                                 countries.get(field[j][k - 1].getOwnerID()).army.reduceArmy();
 
@@ -219,9 +209,7 @@ public class Map {
                                     if (x == 3&&field[j][k+1].getOwnerID()!=i) {
                                         if (field[j][k+1].getOwnerID()!=-1) {
                                             if(countries.get(i).attack()>countries.get(field[j][k+1].getOwnerID()).defend()){
-                                             //   countries.get(field[j][k+1].getOwnerID()).getTerritory().pop();
                                                 countries.get(field[j][k+1].getOwnerID()).getTerritory().remove(field[j][k+1]);//////////////////
-                                             //   countries.get(field[j][k+1].getOwnerID()).getTerritory().trimToSize();//////////////////
                                                 countries.get(i).getTerritory().add(field[j][k+1]);
                                                 countries.get(field[j][k+1].getOwnerID()).army.reduceArmy();
 

@@ -52,41 +52,50 @@ public class Simulation {
 
         for(int i=0; i<data.getNumberOfIterations(); i++){
             map.generateResources(100,100);
-            map.takeNewField();
+           /* for(int k = 0; k<data.getNumberOfCountries(); k++){{
+                map.takeNewField(k);
+            }
+*/
+
+
             for(int j=0; j<data.getNumberOfCountries(); j++){
-                map.countries.get(j).summingCountryPopuation();
-                map.countries.get(j).summingCountryGold();
+                map.takeNewField(j);
+                map.countries.get(j).summingCountryPopuation(data,map);
+                map.countries.get(j).summingCountryGold(data,map);
                 map.countries.get(j).army.updateArmy(map.countries.get(j));
             }
-            System.out.println("Iteracja: "+i);
-        }
-        /*System.out.println();
-        System.out.println(map.countries.get(0).army.units.get(0).getCount());
-        System.out.println(map.countries.get(0).army.units.get(1).getCount());
-        System.out.println(map.countries.get(0).army.units.get(2).getCount());
-        System.out.println();
-        System.out.println(map.countries.get(1).army.units.get(0).getCount());
-        System.out.println(map.countries.get(1).army.units.get(1).getCount());
-        System.out.println(map.countries.get(1).army.units.get(2).getCount());
-        System.out.println();
-        System.out.println(map.countries.get(1).army.units.size());
-        System.out.println(map.countries.get(0).getTotalGold());
-        System.out.println(map.countries.get(0).getTotalPopulation());*/
-        System.out.println();
-        System.out.println("Map after the simulation:");
-        map.printMap();
+                System.out.println("Iteracja: "+i);
+            }
 
-        try{
-            PrintWriter output = new PrintWriter(new FileWriter("SimulationResults.txt"));
-            Data.printSimulationResults(output, map.countries);
-            output.close();
+            System.out.println();
+            System.out.println("Map after the simulation:");
+            map.printMap();
+
+            //}
+            //public void printID(){
+                for(int p = 0; p<data.getMapSize(); p++){
+                    for(int n = 0; n<data.getMapSize(); n++) {
+                        System.out.print(" "+map.field[p][n].getFieldID());
+
+                    }System.out.println();
+                }
+            //}
+
+
+            try{
+                PrintWriter output = new PrintWriter(new FileWriter("SimulationResults.txt"));
+                Data.printSimulationResults(output, map);
+                output.close();
+            }
+            catch (
+                    IOException e){
+                System.out.println(e.getMessage());
+            }
         }
-        catch (
-                IOException e){
-            System.out.println(e.getMessage());
-        }
+
+
+
+
+
     }
-
-
-}
 

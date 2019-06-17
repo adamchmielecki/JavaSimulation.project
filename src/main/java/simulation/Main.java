@@ -7,7 +7,17 @@ public class Main {
 
         Simulation simulation = new Simulation();
         simulation.loadData();
-        simulation.startSimulation();
+
+
+        for(int i=0; i<100; i++ ){
+            simulation.startSimulation();
+        }
+
+
+
+
+
+
     }
 
 }

@@ -18,11 +18,11 @@ public class Field {
     /**
      * Constructor to create an Object of an instance and set value of gold and population on field
      */
-    public Field() {
+    public Field(int id) {
         generator = new Random();
         gold = new Gold(generator.nextInt(200));
         population = new Population(generator.nextInt(200));
-
+        this.fieldID=id;
         this.ownerID = -1;
 
     }

@@ -20,9 +20,9 @@ public class Data {
 
 
     /**
-     *
-     * @param input
-     * @throws IOException
+     * This method reads the simulation parameters from the file
+     * @param input file from which parameters are loaded
+     * @throws IOException Constructs an IOException with null as its error detail message
      */
     public static void readInputData(BufferedReader input) throws IOException {
         numberOfCountries = lineReader(input, numberOfCountries);
@@ -31,11 +31,11 @@ public class Data {
     }
 
     /**
-     *
-     * @param input
-     * @param value
-     * @return
-     * @throws IOException
+     * This method saves data from a file to the text field
+     * @param input file from which parameters are loaded
+     * @param value data read from the file
+     * @return returns data parsed to int
+     * @throws IOException Constructs an IOException with null as its error detail message
      */
     private static int lineReader(BufferedReader input, int value) throws IOException {
         String line = input.readLine();
@@ -47,14 +47,14 @@ public class Data {
         return value;
     }
 
-    public static void printSimulationResults(PrintWriter output, ArrayList<Country> countries) throws IOException {
+    public static void printSimulationResults(PrintWriter output, Map map) throws IOException {
         output.println("Countries after simulation:");
-        for (int i=0; i<countries.size(); i++){
-            if(countries.get(i).getTerritory().size()==0){
-                output.println("ID: " + countries.get(i).getCountryID() + ". Doesn't exist.");
+        for (int i=0; i<map.countries.size(); i++){
+            if(map.countries.get(i).getTerritory().size()==0){
+                output.println("ID: " + map.countries.get(i).getCountryID() + ". Doesn't exist.");
             }
             else{
-                output.println("ID: " + countries.get(i).getCountryID() +". Fields - " + (countries.get(i).getTerritory().size()) + "; Power of attack - " + countries.get(i).attack() + "; Power of defence - " + countries.get(i).defend());
+                output.println("ID: " + map.countries.get(i).getCountryID() +". Fields - " + (map.countSize(map.countries.get(i)))  + "; Power of attack - " + map.countries.get(i).attack() + "; Power of defence - " + map.countries.get(i).defend());
             }
         }
     }

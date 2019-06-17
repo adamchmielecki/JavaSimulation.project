@@ -12,6 +12,7 @@ public class Country {
     private Stack<Field> territory;
     Army army;
 
+
     /**
      * Constructor to create an Object of an instance
      * @param countryID  unique id of country
@@ -28,11 +29,24 @@ public class Country {
      * This method summing gold from all fields belong to country
      * @return returns sum of gold from all fields belong to country
      */
-    public int summingCountryGold(){
+    public int summingCountryGold(Data data, Map map){
         totalGold=0;
-        for(int i=0; i<territory.size(); i++){
-            totalGold+=territory.get(i).gold.getAmount();
+       /* System.out.println("ID: "+this.countryID +" ,size:"+this.territory.size());
+        for(int i=0;i<this.territory.size();i++)
+        {
+            System.out.println(i+"->"+territory.get(i).getFieldID());
+        }*/
+        for(int j=0; j<data.getMapSize(); j++){
+            for(int k=0; k<data.getMapSize(); k++){
+                if(map.field[j][k].getOwnerID()==this.countryID){
+                    totalGold+=map.field[j][k].gold.getAmount();
+                }
+            }
         }
+
+      /*  for(int i=0; i<territory.size(); i++){
+            totalGold+=territory.get(i).gold.getAmount();
+        }*/
         return totalGold;
     }
 
@@ -40,11 +54,26 @@ public class Country {
      * This method summing population from all fields belong to country
      * @return returns sum of population from all fields belong to country
      */
-    public int  summingCountryPopuation(){
+    public int  summingCountryPopuation(Data data, Map map){
         totalPopulation=0;
-        for(int i=0; i<territory.size(); i++){
-            totalPopulation+=territory.get(i).population.getAmount();
+
+       /* System.out.println("ID: "+this.countryID +" ,size:"+this.territory.size());
+        for(int i=0;i<this.territory.size();i++)
+        {
+            System.out.println(i+"->"+territory.get(i).getFieldID());
+        }*/
+        for(int j=0; j<data.getMapSize(); j++){
+            for(int k=0; k<data.getMapSize(); k++){
+                if(map.field[j][k].getOwnerID()==this.countryID){
+                    totalPopulation+=map.field[j][k].population.getAmount();
+                }
+            }
         }
+
+      /*  for(int i=0; i<territory.size(); i++){
+            totalGold+=territory.get(i).gold.getAmount();
+        }*/
+
         return totalPopulation;
     }
 

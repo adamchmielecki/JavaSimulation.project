@@ -1,0 +1,11 @@
+Countries after simulation:
+ID: 0. Fields - 5; Power of attack - 26985; Power of defence - 35655
+ID: 1. Fields - 2; Power of attack - 500; Power of defence - 660
+ID: 2. Doesn't exist.
+ID: 3. Doesn't exist.
+ID: 4. Fields - 10; Power of attack - 4210; Power of defence - 5670
+ID: 5. Fields - 6; Power of attack - 32190; Power of defence - 42630
+ID: 6. Fields - 4; Power of attack - 21945; Power of defence - 28695
+ID: 7. Doesn't exist.
+ID: 8. Fields - 2; Power of attack - 365; Power of defence - 485
+ID: 9. Fields - 6; Power of attack - 30410; Power of defence - 40370

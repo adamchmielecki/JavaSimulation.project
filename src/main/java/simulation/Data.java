@@ -47,11 +47,10 @@ public class Data {
         return value;
     }
 
-
     /**
-     * This method prints the country statistics after simulation
-     * @param output file where the data will get saved
-     * @param map map for which the simulation is performed
+     * This method prints results of simulation to text file
+     * @param output file where result of simulation will be saved
+     * @param map object, which contains countries' properties
      * @throws IOException Constructs an IOException with null as its error detail message
      */
     public static void printSimulationResults(PrintWriter output, Map map) throws IOException {

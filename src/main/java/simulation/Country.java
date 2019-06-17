@@ -69,6 +69,7 @@ public class Country {
      */
     int attack() {
         int powerOfAttack=0;
+        new Soldier(1).upgradeUnits();
         for (Unit unit: army.units) {
             powerOfAttack+=unit.getCount()*unit.strenghtOfAttack;
         }

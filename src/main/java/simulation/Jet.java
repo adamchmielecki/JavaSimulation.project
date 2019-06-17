@@ -17,14 +17,18 @@ public class Jet extends Unit {
         strenghtOfDefence = 15;
         staff = 10;
         cost = 50;
+        levelOfUpgrade=1;
     }
 
-    /*public void superJetSkill(Country offensiveCountry, Country defensiveCountry, Field field){
-        bonus=bonusGenerator.nextInt(100);
-        if(offensiveCountry.army.jets.size()<=defensiveCountry.army.jets.size()) {
-            if (bonus >= 85) {
-                field.setOwnerID(defensiveCountry.getCountryID());
-            }
+    /**
+     * This method decreases the cost of production jets
+     */
+    @Override
+    public void upgradeUnits() {
+
+        if(this.getCount()>=levelOfUpgrade*1000&&this.cost>30){
+            this.cost=this.cost-1;
+            levelOfUpgrade++;
         }
-    }*/
+    }
 }

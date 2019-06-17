@@ -18,21 +18,18 @@ public class Soldier extends Unit {
         strenghtOfDefence = 5;
         staff = 10;
         cost = 10;
+        levelOfUpgrade=1;
     }
 
-    /* public void createNewSoldier(Country country){
-         setCount(getCount() + 1);
-         country.setTotalGold(country.getTotalGold() - cost);
-         country.setTotalPopulation(country.getTotalPopulation() - staff);
-     }*/
-    /*public void superSoldierSkill(Country offensiveCountry, Country defensiveCountry, Field field){
-        bonus=bonusGenerator.nextInt(100);
-        if(offensiveCountry.army.soldiers.size()>=defensiveCountry.army.soldiers.size()){
-            if(bonus>=85){
-                field.population.setAmount(field.population.getAmount()*2);
-            }
+    /**
+     * This method increases the soldier's strength of attack
+     */
+    @Override
+    public void upgradeUnits() {
+        if(this.getCount()>=levelOfUpgrade*1000){
+            this.strenghtOfAttack=this.strenghtOfAttack+1;
+            levelOfUpgrade++;
         }
-    }*/
-
+    }
 
 }

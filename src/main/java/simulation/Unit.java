@@ -1,7 +1,4 @@
 package simulation;
-
-
-
 /**
  * Abstract class defines basic attributes for every military class
  */
@@ -12,6 +9,7 @@ public abstract class Unit implements IUnit {
     public int strenghtOfDefence;
     public int staff;
     public int cost;
+    public int levelOfUpgrade;
     /*int bonus;
     Random bonusGenerator;*/
 
@@ -28,6 +26,13 @@ public abstract class Unit implements IUnit {
         country.setTotalGold(country.getTotalGold() - cost);
         country.setTotalPopulation(country.getTotalPopulation() - staff);
     }
+
+    /**
+     * This method improves the specified unit parameter
+     */
+    public abstract void upgradeUnits();
+
+
 
     /**
      * Allows access to a variable that holds the number of units of each type

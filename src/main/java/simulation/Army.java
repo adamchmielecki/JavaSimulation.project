@@ -53,10 +53,12 @@ public class Army  {
     }
 
     /**
-     * This method reduces armies after losing battle
+     * This method reduces army after losing battle
      */
     public void reduceArmy() {
-        for (Unit unit: units) unit.setCount(unit.getCount()/2);
+        int randomReduction;
+        randomReduction = (generator.nextInt(76) + 125)/100;
+        for (Unit unit: units) unit.setCount(unit.getCount()/randomReduction);
     }
 
 
@@ -74,6 +76,8 @@ public class Army  {
             int x;
             x = generator.nextInt(units.size());
             units.get(x).createNewUnit(country);
+            units.get(x).upgradeUnits();
+
         }
         while (country.getTotalGold() >= units.get(0).cost && country.getTotalPopulation() >= units.get(0).staff) {
             units.get(0).createNewUnit(country);

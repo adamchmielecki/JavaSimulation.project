@@ -41,13 +41,7 @@ public class Simulation {
             map.countries.get(i).army.generateArmy();
         }
 
-        /*System.out.println(map.countries.get(0).army.units.get(0).getCount());
-        System.out.println(map.countries.get(0).army.units.get(1).getCount());
-        System.out.println(map.countries.get(0).army.units.get(2).getCount());
-        System.out.println();
-        System.out.println(map.countries.get(1).army.units.get(0).getCount());
-        System.out.println(map.countries.get(1).army.units.get(1).getCount());
-        System.out.println(map.countries.get(1).army.units.get(2).getCount());*/
+
 
 
         for (int i = 0; i < data.getNumberOfIterations(); i++) {

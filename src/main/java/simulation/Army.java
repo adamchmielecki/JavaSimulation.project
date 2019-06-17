@@ -53,10 +53,12 @@ public class Army  {
     }
 
     /**
-     * This method reduces armies after losing battle
+     * This method reduces army after losing battle
      */
     public void reduceArmy() {
-        for (Unit unit: units) unit.setCount(unit.getCount()/2);
+        int randomReduction;
+        randomReduction = (generator.nextInt(76) + 125)/100;
+        for (Unit unit: units) unit.setCount(unit.getCount()/randomReduction);
     }
 
 

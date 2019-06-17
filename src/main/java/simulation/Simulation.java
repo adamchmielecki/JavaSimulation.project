@@ -36,7 +36,7 @@ public class Simulation {
         map.settingID();
         map.generateResources(100, 10);
         map.generateStartingPosition();
-        //map.printMap();
+        map.printMap();
         for (int i = 0; i < data.getNumberOfCountries(); i++) {
             map.countries.get(i).army.generateArmy();
         }
@@ -45,7 +45,7 @@ public class Simulation {
 
 
         for (int i = 0; i < data.getNumberOfIterations(); i++) {
-            map.generateResources(100, 100);
+            map.generateResources(100, 50);
 
             System.out.println("Iteracja: " + i);
 
@@ -60,7 +60,7 @@ public class Simulation {
 
             System.out.println();
             System.out.println("Map after the simulation:");
-            //map.printMap();
+            map.printMap();
 
 
             try {

@@ -17,6 +17,7 @@ public class Field {
 
     /**
      * Constructor to create an Object of an instance and set value of gold and population on field
+     * @param id field's unique ID
      */
     public Field(int id) {
         generator = new Random();

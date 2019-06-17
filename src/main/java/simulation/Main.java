@@ -7,18 +7,7 @@ public class Main {
 
         Simulation simulation = new Simulation();
         simulation.loadData();
-
-
-      //  for(int i=0; i<100; i++ ){
-      //      System.out.println("Iteracja: " + i);
-            simulation.startSimulation();
-      //  }
-
-
-
-
-
-
+        simulation.startSimulation();
     }
 
 }

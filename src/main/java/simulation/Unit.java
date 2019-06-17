@@ -10,8 +10,6 @@ public abstract class Unit implements IUnit {
     public int staff;
     public int cost;
     public int levelOfUpgrade;
-    /*int bonus;
-    Random bonusGenerator;*/
 
     public Unit(int count){
         this.count = count;
@@ -31,7 +29,6 @@ public abstract class Unit implements IUnit {
      * This method improves the specified unit parameter
      */
     public abstract void upgradeUnits();
-
 
 
     /**

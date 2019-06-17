@@ -27,6 +27,8 @@ public class Country {
 
     /**
      * This method summing gold from all fields belong to country
+     * @param data object containing simulation's start parameters
+     * @param map object containing countries' properties
      * @return returns sum of gold from all fields belong to country
      */
     public int summingCountryGold(Data data, Map map){
@@ -45,6 +47,8 @@ public class Country {
 
     /**
      * This method summing population from all fields belong to country
+     * @param data object containing simulation's start parameters
+     * @param map object containing countries' properties
      * @return returns sum of population from all fields belong to country
      */
     public int  summingCountryPopuation(Data data, Map map){
@@ -69,7 +73,6 @@ public class Country {
      */
     int attack() {
         int powerOfAttack=0;
-        new Soldier(1).upgradeUnits();
         for (Unit unit: army.units) {
             powerOfAttack+=unit.getCount()*unit.strenghtOfAttack;
         }

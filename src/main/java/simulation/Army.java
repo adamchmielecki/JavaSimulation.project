@@ -23,19 +23,6 @@ public class Army  {
     private int mostExpensiveUnit;
     private int mostValuableUnit;
 
-/*    public void superMethods(Country offensiveCountry, Country defensiveCountry, Field field){
-    /**
-     * collection of special methods that can be called after the battle
-     * @param offensiveCountry the country that is carrying out the attack
-     * @param defensiveCountry the country which is attacked
-     * @param field place of the battle
-     */
-    /*public void superMethods(Country offensiveCountry, Country defensiveCountry, Field field){
-        new Soldier().superSoldierSkill(offensiveCountry,defensiveCountry,field);
-        new Tank().superTankSkill(offensiveCountry,defensiveCountry,field);
-        new Jet().superJetSkill(offensiveCountry,defensiveCountry,field);
-    }*/
-
     /**
      * This method generates armies for each country at the beginning of the simulation
      */
@@ -60,7 +47,6 @@ public class Army  {
         randomReduction = (generator.nextInt(76) + 125)/100;
         for (Unit unit: units) unit.setCount(unit.getCount()/randomReduction);
     }
-
 
 
     /**

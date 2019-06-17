@@ -5,7 +5,6 @@ package simulation;
  */
 public class Jet extends Unit {
 
-
     /**
      * Constructor to create an Object of an instance
      * Constructor defines parameters for jet unit
@@ -25,7 +24,6 @@ public class Jet extends Unit {
      */
     @Override
     public void upgradeUnits() {
-
         if(this.getCount()>=levelOfUpgrade*1000&&this.cost>30){
             this.cost=this.cost-1;
             levelOfUpgrade++;

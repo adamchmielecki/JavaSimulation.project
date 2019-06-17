@@ -1,11 +1,16 @@
 Countries after simulation:
-ID: 0. Fields - 4; Soldiers - 893; Tanks - 679; Jets - 639; Power of attack - 20840; Power of defence - 27630
+ID: 0. Doesn't exist.
 ID: 1. Doesn't exist.
-ID: 2. Fields - 7; Soldiers - 1583; Tanks - 1166; Jets - 1184; Power of attack - 37335; Power of defence - 48995
-ID: 3. Fields - 2; Soldiers - 459; Tanks - 295; Jets - 260; Power of attack - 9145; Power of defence - 12095
-ID: 4. Fields - 6; Soldiers - 886; Tanks - 625; Jets - 612; Power of attack - 19860; Power of defence - 26110
-ID: 5. Fields - 3; Soldiers - 522; Tanks - 329; Jets - 318; Power of attack - 10670; Power of defence - 13960
-ID: 6. Fields - 5; Soldiers - 1151; Tanks - 866; Jets - 853; Power of attack - 27210; Power of defence - 35870
-ID: 7. Fields - 3; Soldiers - 725; Tanks - 456; Jets - 454; Power of attack - 14995; Power of defence - 19555
-ID: 8. Fields - 3; Soldiers - 735; Tanks - 533; Jets - 521; Power of attack - 16820; Power of defence - 22150
+ID: 2. Fields - 8; Power of attack - 341675; Power of defence - 461475
+ID: 3. Fields - 17; Power of attack - 792125; Power of defence - 1099700
+ID: 4. Doesn't exist.
+ID: 5. Fields - 1; Power of attack - 1825; Power of defence - 2235
+ID: 6. Doesn't exist.
+ID: 7. Doesn't exist.
+ID: 8. Doesn't exist.
 ID: 9. Doesn't exist.
+ID: 10. Doesn't exist.
+ID: 11. Doesn't exist.
+ID: 12. Fields - 1; Power of attack - 8650; Power of defence - 10690
+ID: 13. Fields - 9; Power of attack - 198330; Power of defence - 255781
+ID: 14. Doesn't exist.

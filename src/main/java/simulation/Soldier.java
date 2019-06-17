@@ -26,7 +26,7 @@ public class Soldier extends Unit {
      */
     @Override
     public void upgradeUnits() {
-        if(this.getCount()>=levelOfUpgrade*1000){
+        if(this.getCount()>=levelOfUpgrade*1000 && strenghtOfAttack<10){
             this.strenghtOfAttack=this.strenghtOfAttack+1;
             levelOfUpgrade++;
         }

@@ -27,7 +27,7 @@ public class Tank extends Unit {
      */
     @Override
     public void upgradeUnits() {
-        if(this.getCount()>=levelOfUpgrade*700){
+        if(this.getCount()>=levelOfUpgrade*700 && strenghtOfDefence<30){
             this.strenghtOfDefence=this.strenghtOfDefence+1;
             levelOfUpgrade++;
         }

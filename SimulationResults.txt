@@ -1,21 +1,21 @@
 Countries after simulation:
 ID: 0. Doesn't exist.
-ID: 1. Fields - 9; Power of attack - 192630; Power of defence - 246913
+ID: 1. Fields - 18; Power of attack - 331135; Power of defence - 462315
 ID: 2. Doesn't exist.
 ID: 3. Doesn't exist.
-ID: 4. Fields - 15; Power of attack - 254055; Power of defence - 343296
+ID: 4. Fields - 11; Power of attack - 119364; Power of defence - 149886
 ID: 5. Doesn't exist.
-ID: 6. Fields - 27; Power of attack - 594565; Power of defence - 836620
-ID: 7. Doesn't exist.
+ID: 6. Doesn't exist.
+ID: 7. Fields - 1; Power of attack - 13941; Power of defence - 15880
 ID: 8. Doesn't exist.
 ID: 9. Doesn't exist.
 ID: 10. Doesn't exist.
 ID: 11. Doesn't exist.
-ID: 12. Fields - 1; Power of attack - 9830; Power of defence - 12200
-ID: 13. Doesn't exist.
-ID: 14. Doesn't exist.
+ID: 12. Fields - 1; Power of attack - 5065; Power of defence - 6175
+ID: 13. Fields - 18; Power of attack - 385235; Power of defence - 537345
+ID: 14. Fields - 3; Power of attack - 14080; Power of defence - 17160
 ID: 15. Doesn't exist.
 ID: 16. Doesn't exist.
 ID: 17. Doesn't exist.
-ID: 18. Fields - 11; Power of attack - 54688; Power of defence - 70160
-ID: 19. Doesn't exist.
+ID: 18. Doesn't exist.
+ID: 19. Fields - 12; Power of attack - 64470; Power of defence - 81168

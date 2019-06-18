@@ -7,7 +7,6 @@ import java.util.Random;
  */
 public class Field {
 
-
     Gold gold;
     Population population;
     private int ownerID;
@@ -25,7 +24,6 @@ public class Field {
         population = new Population(generator.nextInt(200));
         this.fieldID=id;
         this.ownerID = -1;
-
     }
 
     /**

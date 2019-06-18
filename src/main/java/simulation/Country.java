@@ -12,7 +12,6 @@ public class Country {
     private Stack<Field> territory;
     Army army;
 
-
     /**
      * Constructor to create an Object of an instance
      * @param countryID  unique id of country
@@ -61,8 +60,6 @@ public class Country {
                 }
             }
         }
-
-
         return totalPopulation;
     }
 

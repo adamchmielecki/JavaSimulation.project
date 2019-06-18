@@ -152,20 +152,22 @@ public class Map {
                                     if (x == 0&&field[j - 1][k].getOwnerID()!=countryID) {
                                         if (field[j - 1][k].getOwnerID()!=-1) {
                                             if(countries.get(countryID).attack()>countries.get(field[j - 1][k].getOwnerID()).defend()){
-                                                countries.get(field[j - 1][k].getOwnerID()).getTerritory().remove(field[j - 1][k]);//////////////////
+                                                countries.get(field[j - 1][k].getOwnerID()).getTerritory().remove(field[j - 1][k]);
                                                 countries.get(countryID).getTerritory().add(field[j- 1][k]);
                                                 countries.get(field[j - 1][k].getOwnerID()).army.reduceArmy();
                                                 field[j - 1][k].setOwnerID(countryID);
 
                                             }
                                             else  {
-                                                field[j - 1][k].setOwnerID(field[j - 1][k].getOwnerID());
                                                 countries.get(countryID).army.reduceArmy();
                                             }
                                         }
 
 
-                                        else { field[j - 1][k].setOwnerID(countryID); }
+                                        else {
+                                            field[j - 1][k].setOwnerID(countryID);
+                                            countries.get(countryID).getTerritory().add(field[j- 1][k]);
+                                        }
 
 
                                         return;
@@ -174,7 +176,7 @@ public class Map {
                                     if (x == 1&&field[j + 1][k].getOwnerID()!=countryID) {
                                         if (field[j + 1][k].getOwnerID()!=-1) {
                                             if(countries.get(countryID).attack()>countries.get(field[j + 1][k].getOwnerID()).defend()){
-                                                countries.get(field[j + 1][k].getOwnerID()).getTerritory().remove(field[j + 1][k]);//////////////////
+                                                countries.get(field[j + 1][k].getOwnerID()).getTerritory().remove(field[j + 1][k]);
                                                 countries.get(countryID).getTerritory().add(field[j + 1][k]);
                                                 countries.get(field[j + 1][k].getOwnerID()).army.reduceArmy();
 
@@ -186,7 +188,10 @@ public class Map {
                                                 countries.get(countryID).army.reduceArmy();
                                             }
                                         }
-                                        else { field[j + 1][k].setOwnerID(countryID); }
+                                        else {
+                                            field[j + 1][k].setOwnerID(countryID);
+                                            countries.get(countryID).getTerritory().add(field[j + 1][k]);
+                                        }
 
                                         return;
                                     }
@@ -194,7 +199,7 @@ public class Map {
                                     if (x == 2&&field[j][k-1].getOwnerID()!=countryID) {
                                         if (field[j][k - 1].getOwnerID()!=-1) {
                                             if(countries.get(countryID).attack()>countries.get(field[j][k - 1].getOwnerID()).defend()){
-                                                countries.get(field[j][k-1].getOwnerID()).getTerritory().remove(field[j][k-1]);//////////////////
+                                                countries.get(field[j][k-1].getOwnerID()).getTerritory().remove(field[j][k-1]);
                                                 countries.get(countryID).getTerritory().add(field[j][k - 1]);
                                                 countries.get(field[j][k - 1].getOwnerID()).army.reduceArmy();
 
@@ -203,11 +208,13 @@ public class Map {
 
                                             }
                                             else {
-                                                field[j ][k - 1].setOwnerID(field[j ][k - 1].getOwnerID());
                                                 countries.get(countryID).army.reduceArmy();
                                             }
                                         }
-                                        else { field[j][k - 1].setOwnerID(countryID);  }
+                                        else {
+                                            field[j][k - 1].setOwnerID(countryID);
+                                            countries.get(countryID).getTerritory().add(field[j][k - 1]);
+                                        }
 
                                         return;
                                     }
@@ -224,11 +231,13 @@ public class Map {
 
                                             }
                                             else {
-                                                field[j][k + 1].setOwnerID(field[j ][k+ 1].getOwnerID());
                                                 countries.get(countryID).army.reduceArmy();
                                             }
                                         }
-                                        else { field[j][k+1].setOwnerID(countryID);  }
+                                        else {
+                                            field[j][k+1].setOwnerID(countryID);
+                                            countries.get(countryID).getTerritory().add(field[j][k+1]);
+                                        }
 
 
                                         return;

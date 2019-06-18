@@ -1,2 +1,21 @@
-Wrong starting simulation parameters!
-Enter new values in the 'InputData.txt' file.
+Countries after simulation:
+ID: 0. Doesn't exist.
+ID: 1. Fields - 9; Power of attack - 192630; Power of defence - 246913
+ID: 2. Doesn't exist.
+ID: 3. Doesn't exist.
+ID: 4. Fields - 15; Power of attack - 254055; Power of defence - 343296
+ID: 5. Doesn't exist.
+ID: 6. Fields - 27; Power of attack - 594565; Power of defence - 836620
+ID: 7. Doesn't exist.
+ID: 8. Doesn't exist.
+ID: 9. Doesn't exist.
+ID: 10. Doesn't exist.
+ID: 11. Doesn't exist.
+ID: 12. Fields - 1; Power of attack - 9830; Power of defence - 12200
+ID: 13. Doesn't exist.
+ID: 14. Doesn't exist.
+ID: 15. Doesn't exist.
+ID: 16. Doesn't exist.
+ID: 17. Doesn't exist.
+ID: 18. Fields - 11; Power of attack - 54688; Power of defence - 70160
+ID: 19. Doesn't exist.

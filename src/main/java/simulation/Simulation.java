@@ -32,31 +32,42 @@ public class Simulation {
         System.out.println(Data.getMapSize());
         System.out.println(Data.getNumberOfIterations());
 
-        Map map = new Map(data);
-        map.settingID();
-        map.generateResources(100, 10);
-        map.generateStartingPosition();
-        map.printMap();
-        for (int i = 0; i < data.getNumberOfCountries(); i++) {
-            map.countries.get(i).army.generateArmy();
+        if(Data.getNumberOfCountries()>Data.getMapSize()*Data.getMapSize()||Data.getNumberOfIterations()<1||Data.getMapSize()<1)
+        {
+            try {
+                PrintWriter output = new PrintWriter(new FileWriter("SimulationResults.txt"));
+                output.println("Wrong starting simulation parameters!");
+                output.println("Enter new values in the 'InputData.txt' file.");
+                output.close();
+            } catch (
+                    IOException e) {
+                System.out.println(e.getMessage());
+            }
         }
-
-
-
-
-        for (int i = 0; i < data.getNumberOfIterations(); i++) {
-            map.generateResources(100, 50);
-
-            System.out.println("Iteracja: " + i);
-
-            for (int j = 0; j < data.getNumberOfCountries(); j++) {
-                map.takeNewField(j);
-                map.countries.get(j).summingCountryPopuation(data, map);
-                map.countries.get(j).summingCountryGold(data, map);
-                map.countries.get(j).army.updateArmy(map.countries.get(j));
+        else {
+            Map map = new Map(data);
+            map.settingID();
+            map.generateResources(100, 10);
+            map.generateStartingPosition();
+            map.printMap();
+            for (int i = 0; i < data.getNumberOfCountries(); i++) {
+                map.countries.get(i).army.generateArmy();
             }
 
 
+            for (int i = 0; i < data.getNumberOfIterations(); i++) {
+                map.generateResources(100, 50);
+
+                System.out.println("Iteracja: " + i);
+
+                for (int j = 0; j < data.getNumberOfCountries(); j++) {
+                    map.takeNewField(j);
+                    map.countries.get(j).summingCountryPopuation(data, map);
+                    map.countries.get(j).summingCountryGold(data, map);
+                    map.countries.get(j).army.updateArmy(map.countries.get(j));
+                }
+
+            }
 
             System.out.println();
             System.out.println("Map after the simulation:");
@@ -72,7 +83,6 @@ public class Simulation {
                 System.out.println(e.getMessage());
             }
         }
-
 
     }
 
